@@ -1,0 +1,3 @@
+rootProject.name = 'TowerDefense'
+
+include ':core', ':lwjgl3', ':android', ':tools'

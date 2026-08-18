@@ -1,0 +1,188 @@
+{
+"id": 23,
+"name": "Volcán III",
+"biome": "volcano",
+"gridWidth": 13,
+"gridHeight": 10,
+"blockedCells": [
+	[ 4, 3 ],
+	[ 12, 7 ],
+	[ 6, 6 ],
+	[ 4, 6 ],
+	[ 3, 6 ],
+	[ 5, 7 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 13, 1 ],
+			[ 2, 1 ],
+			[ 2, 5 ],
+			[ 11, 5 ],
+			[ 11, 9 ],
+			[ 0, 9 ]
+		]
+	}
+],
+"startGold": 516,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 3,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 8,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 9,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 9
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 10,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 9.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 12,
+				"interval": 0.5
+			},
+			{
+				"enemy": "champion",
+				"count": 1,
+				"interval": 3,
+				"delay": 2
+			}
+		],
+		"waveDelay": 9.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			},
+			{
+				"enemy": "magma",
+				"count": 2,
+				"interval": 1.8,
+				"delay": 4
+			}
+		],
+		"waveDelay": 10.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 6,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 10.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 6,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 11
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			},
+			{
+				"enemy": "magma",
+				"count": 2,
+				"interval": 1.8,
+				"delay": 3
+			}
+		],
+		"waveDelay": 11.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 13,
+				"interval": 0.5
+			},
+			{
+				"enemy": "magma",
+				"count": 2,
+				"interval": 1.8,
+				"delay": 5
+			}
+		],
+		"waveDelay": 11.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 17,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 12
+	}
+],
+"rewards": {
+	"metaCurrency": 209,
+	"firstClearBonus": 53
+}
+}

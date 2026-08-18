@@ -1,0 +1,40 @@
+{
+  "id": 1,
+  "name": "Primeros pasos",
+  "biome": "meadow",
+  "gridWidth": 12,
+  "gridHeight": 10,
+  "blockedCells": [[2, 2], [7, 5], [10, 3]],
+  "paths": [
+    { "waypoints": [[0, 5], [4, 5], [4, 2], [9, 2], [9, 7], [12, 7]] }
+  ],
+  "startGold": 260,
+  "lives": 20,
+  "allowedTowers": ["cannon"],
+  "waves": [
+    { "waveDelay": 6, "groups": [
+      { "enemy": "normal", "count": 6, "interval": 1.0 }
+    ] },
+    { "waveDelay": 8, "groups": [
+      { "enemy": "normal", "count": 8, "interval": 0.9 }
+    ] },
+    { "waveDelay": 8, "groups": [
+      { "enemy": "normal", "count": 6, "interval": 0.9 },
+      { "enemy": "fast", "count": 4, "interval": 0.6, "delay": 4 }
+    ] },
+    { "waveDelay": 9, "groups": [
+      { "enemy": "fast", "count": 8, "interval": 0.5 }
+    ] },
+    { "waveDelay": 10, "groups": [
+      { "enemy": "normal", "count": 10, "interval": 0.8 },
+      { "enemy": "fast", "count": 6, "interval": 0.6, "delay": 5 }
+    ] }
+  ],
+  "rewards": { "metaCurrency": 25, "firstClearBonus": 25 },
+  "tutorial": [
+    { "message": "¡Bienvenido, comandante! Los enemigos avanzarán por el camino de arena hacia tu base. Toca la pantalla para continuar.", "messageEn": "Welcome, commander! Enemies will march down the sand path toward your base. Tap the screen to continue.", "until": "tap" },
+    { "message": "Selecciona el CAÑÓN en la barra inferior y toca una celda verde junto al camino para construirlo.", "messageEn": "Select the CANNON in the bottom bar and tap a green cell next to the path to build it.", "until": "build" },
+    { "message": "¡Bien! Cada enemigo eliminado da oro. Despliega más tanques y resiste la primera oleada.", "messageEn": "Well done! Every enemy killed earns gold. Deploy more tanks and hold off the first wave.", "until": "waveclear" },
+    { "message": "¡Perfecto! Arrastra para mover la cámara y usa la rueda o el gesto de pinza para hacer zoom. ¡Acaba con todas las oleadas!", "messageEn": "Perfect! Drag to move the camera and use the wheel or a pinch gesture to zoom. Clear every wave!", "until": "tap" }
+  ]
+}

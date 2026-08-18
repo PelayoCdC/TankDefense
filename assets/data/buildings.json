@@ -1,0 +1,296 @@
+{
+  "buildings": [
+    {
+      "id": "armory",
+      "name": "Armería",
+      "desc": "Munición mejorada: más daño para todos los tanques.",
+      "levels": [
+        {
+          "cost": 1,
+          "stat": "damageMult",
+          "add": 0.08
+        },
+        {
+          "cost": 2,
+          "stat": "damageMult",
+          "add": 0.08
+        },
+        {
+          "cost": 3,
+          "stat": "damageMult",
+          "add": 0.08
+        },
+        {
+          "cost": 5,
+          "stat": "damageMult",
+          "add": 0.08
+        },
+        {
+          "cost": 7,
+          "stat": "damageMult",
+          "add": 0.08
+        }
+      ],
+      "doctrines": [
+        {
+          "id": "power",
+          "stat": "damageMult",
+          "add": 0.08
+        },
+        {
+          "id": "pierce",
+          "stat": "penFlat",
+          "add": 1
+        }
+      ]
+    },
+    {
+      "id": "workshop",
+      "name": "Taller",
+      "desc": "Mejora la cadencia de todos los tanques.",
+      "levels": [
+        {
+          "cost": 1,
+          "stat": "fireRateMult",
+          "add": 0.04
+        },
+        {
+          "cost": 2,
+          "stat": "fireRateMult",
+          "add": 0.04
+        },
+        {
+          "cost": 3,
+          "stat": "fireRateMult",
+          "add": 0.04
+        },
+        {
+          "cost": 5,
+          "stat": "fireRateMult",
+          "add": 0.04
+        },
+        {
+          "cost": 7,
+          "stat": "fireRateMult",
+          "add": 0.04
+        }
+      ],
+      "doctrines": [
+        {
+          "id": "rate",
+          "stat": "fireRateMult",
+          "add": 0.04
+        },
+        {
+          "id": "thrift",
+          "stat": "upgradeDiscount",
+          "add": 0.04
+        }
+      ]
+    },
+    {
+      "id": "optics",
+      "name": "Torre de observación",
+      "desc": "Ópticas calibradas: más alcance para todos los tanques.",
+      "levels": [
+        {
+          "cost": 1,
+          "stat": "rangeMult",
+          "add": 0.03
+        },
+        {
+          "cost": 2,
+          "stat": "rangeMult",
+          "add": 0.03
+        },
+        {
+          "cost": 3,
+          "stat": "rangeMult",
+          "add": 0.03
+        },
+        {
+          "cost": 5,
+          "stat": "rangeMult",
+          "add": 0.03
+        },
+        {
+          "cost": 7,
+          "stat": "rangeMult",
+          "add": 0.03
+        }
+      ],
+      "doctrines": [
+        {
+          "id": "reach",
+          "stat": "rangeMult",
+          "add": 0.03
+        },
+        {
+          "id": "spot",
+          "stat": "goldPerKillMult",
+          "add": 0.03
+        }
+      ]
+    },
+    {
+      "id": "vault",
+      "name": "Cámara del botín",
+      "desc": "Más oro por cada baja enemiga.",
+      "levels": [
+        {
+          "cost": 1,
+          "stat": "goldPerKillMult",
+          "add": 0.08
+        },
+        {
+          "cost": 2,
+          "stat": "goldPerKillMult",
+          "add": 0.08
+        },
+        {
+          "cost": 3,
+          "stat": "goldPerKillMult",
+          "add": 0.08
+        },
+        {
+          "cost": 5,
+          "stat": "goldPerKillMult",
+          "add": 0.08
+        },
+        {
+          "cost": 7,
+          "stat": "goldPerKillMult",
+          "add": 0.08
+        }
+      ]
+    },
+    {
+      "id": "depot",
+      "name": "Depósito de suministros",
+      "desc": "Más oro inicial en cada nivel.",
+      "levels": [
+        {
+          "cost": 1,
+          "stat": "startGoldFlat",
+          "add": 25
+        },
+        {
+          "cost": 2,
+          "stat": "startGoldFlat",
+          "add": 25
+        },
+        {
+          "cost": 3,
+          "stat": "startGoldFlat",
+          "add": 30
+        },
+        {
+          "cost": 5,
+          "stat": "startGoldFlat",
+          "add": 35
+        },
+        {
+          "cost": 7,
+          "stat": "startGoldFlat",
+          "add": 35
+        }
+      ]
+    },
+    {
+      "id": "walls",
+      "name": "Murallas",
+      "desc": "Vidas extra para la fortaleza.",
+      "levels": [
+        {
+          "cost": 1,
+          "stat": "livesFlat",
+          "add": 3
+        },
+        {
+          "cost": 2,
+          "stat": "livesFlat",
+          "add": 3
+        },
+        {
+          "cost": 3,
+          "stat": "livesFlat",
+          "add": 4
+        },
+        {
+          "cost": 5,
+          "stat": "livesFlat",
+          "add": 4
+        },
+        {
+          "cost": 7,
+          "stat": "livesFlat",
+          "add": 4
+        }
+      ]
+    },
+    {
+      "id": "goldmine",
+      "name": "Mina de oro",
+      "desc": "Cristales extra al completar cualquier nivel.",
+      "levels": [
+        {
+          "cost": 1,
+          "stat": "metaIncomeFlat",
+          "add": 3
+        },
+        {
+          "cost": 2,
+          "stat": "metaIncomeFlat",
+          "add": 4
+        },
+        {
+          "cost": 3,
+          "stat": "metaIncomeFlat",
+          "add": 5
+        },
+        {
+          "cost": 5,
+          "stat": "metaIncomeFlat",
+          "add": 6
+        },
+        {
+          "cost": 7,
+          "stat": "metaIncomeFlat",
+          "add": 8
+        }
+      ]
+    },
+    {
+      "id": "lab",
+      "name": "Laboratorio",
+      "desc": "Abarata los nodos del árbol de mejoras.",
+      "levels": [
+        {
+          "cost": 1,
+          "stat": "upgradeDiscount",
+          "add": 0.04
+        },
+        {
+          "cost": 2,
+          "stat": "upgradeDiscount",
+          "add": 0.04
+        },
+        {
+          "cost": 3,
+          "stat": "upgradeDiscount",
+          "add": 0.04
+        },
+        {
+          "cost": 5,
+          "stat": "upgradeDiscount",
+          "add": 0.04
+        },
+        {
+          "cost": 7,
+          "stat": "upgradeDiscount",
+          "add": 0.04
+        }
+      ]
+    }
+  ]
+}

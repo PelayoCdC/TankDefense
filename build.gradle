@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$agpVersion"
+    }
+}
+
+allprojects {
+    version = '1.0.0'
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+configure([project(':core'), project(':lwjgl3'), project(':tools')]) {
+    apply plugin: 'java-library'
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        options.encoding = 'UTF-8'
+    }
+}

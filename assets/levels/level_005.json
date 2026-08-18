@@ -1,0 +1,44 @@
+{
+  "id": 5,
+  "name": "Última lección",
+  "biome": "meadow",
+  "gridWidth": 12,
+  "gridHeight": 10,
+  "blockedCells": [[4, 4], [8, 6]],
+  "paths": [
+    { "waypoints": [[0, 8], [3, 8], [3, 3], [8, 3], [8, 8], [12, 8]] }
+  ],
+  "startGold": 320,
+  "lives": 20,
+  "allowedTowers": [],
+  "waves": [
+    { "waveDelay": 6, "groups": [
+      { "enemy": "normal", "count": 9, "interval": 0.8 }
+    ] },
+    { "waveDelay": 8, "groups": [
+      { "enemy": "fast", "count": 8, "interval": 0.5 }
+    ] },
+    { "waveDelay": 9, "groups": [
+      { "enemy": "tank", "count": 3, "interval": 2.4 },
+      { "enemy": "fast", "count": 6, "interval": 0.5, "delay": 4 }
+    ] },
+    { "waveDelay": 10, "groups": [
+      { "enemy": "normal", "count": 12, "interval": 0.6 },
+      { "enemy": "tank", "count": 3, "interval": 2.4, "delay": 4 }
+    ] },
+    { "waveDelay": 11, "groups": [
+      { "enemy": "fast", "count": 10, "interval": 0.45 },
+      { "enemy": "charger", "count": 2, "interval": 1.8, "delay": 5 }
+    ] },
+    { "waveDelay": 12, "groups": [
+      { "enemy": "boss", "count": 1, "interval": 1 },
+      { "enemy": "normal", "count": 10, "interval": 0.7, "delay": 3 }
+    ] }
+  ],
+  "rewards": { "metaCurrency": 38, "firstClearBonus": 30 },
+  "tutorial": [
+    { "message": "Última lección: al final de este nivel te espera un JEFE. Aguanta mucho daño y resta 5 vidas si llega a la base.", "messageEn": "Last lesson: a BOSS awaits at the end of this level. It soaks up a lot of damage and costs 5 lives if it reaches your base.", "until": "tap" },
+    { "message": "Al completar niveles ganas CRISTALES: desbloquea NUEVOS TANQUES y sus mejoras en el ÁRBOL, y construye los EDIFICIOS de tu base.", "messageEn": "Completing levels earns you CRYSTALS: unlock NEW TANKS and their upgrades in the TREE, and build up your base BUILDINGS.", "until": "tap" },
+    { "message": "Cada 5 niveles cambia el BIOMA: nuevas mecánicas del mapa y enemigos con habilidades especiales. ¡Buena suerte, comandante!", "messageEn": "Every 5 levels the BIOME changes: new map mechanics and enemies with special abilities. Good luck, commander!", "until": "tap" }
+  ]
+}

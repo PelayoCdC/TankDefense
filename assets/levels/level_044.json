@@ -1,0 +1,318 @@
+{
+"id": 44,
+"name": "Cielo tormentoso IV",
+"biome": "storm",
+"gridWidth": 17,
+"gridHeight": 13,
+"blockedCells": [
+	[ 1, 6 ],
+	[ 0, 9 ],
+	[ 14, 0 ],
+	[ 15, 5 ],
+	[ 10, 6 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 0, 3 ],
+			[ 17, 3 ]
+		]
+	},
+	{
+		"waypoints": [
+			[ 8, 0 ],
+			[ 8, 3 ],
+			[ 17, 3 ]
+		]
+	}
+],
+"startGold": 768,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 6,
+				"interval": 0.5,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 6,
+				"interval": 0.5,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "stormcaller",
+				"count": 2,
+				"interval": 2.4,
+				"delay": 4
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 10,
+				"interval": 0.5,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 3,
+				"interval": 1.2
+			},
+			{
+				"enemy": "stormcaller",
+				"count": 2,
+				"interval": 2.4,
+				"delay": 4,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 9
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 13,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 9.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "sapper",
+				"count": 2,
+				"interval": 1.6,
+				"delay": 3
+			}
+		],
+		"waveDelay": 9.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 14,
+				"interval": 0.8,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 10.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 10,
+				"interval": 0.8,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "sapper",
+				"count": 2,
+				"interval": 1.6,
+				"delay": 5
+			}
+		],
+		"waveDelay": 10.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			},
+			{
+				"enemy": "flyer",
+				"count": 3,
+				"interval": 1.2,
+				"delay": 3,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 11
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 12,
+				"interval": 0.8
+			},
+			{
+				"enemy": "normal",
+				"count": 6,
+				"interval": 0.8,
+				"delay": 6
+			}
+		],
+		"waveDelay": 11.4,
+		"event": "enraged"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 12,
+				"interval": 0.8
+			},
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"delay": 3
+			}
+		],
+		"waveDelay": 11.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 23,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 14,
+				"interval": 0.8
+			},
+			{
+				"enemy": "healer",
+				"count": 2,
+				"interval": 2.5,
+				"delay": 5,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 7,
+				"interval": 2.2,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 27,
+				"interval": 0.5,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 7,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 13,
+				"interval": 0.8,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2,
+				"delay": 3,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"delay": 4
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 5,
+				"interval": 2.2
+			},
+			{
+				"enemy": "healer",
+				"count": 2,
+				"interval": 2.5,
+				"delay": 3,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 8,
+				"interval": 2.2,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 12
+	}
+],
+"rewards": {
+	"metaCurrency": 377,
+	"firstClearBonus": 74
+}
+}

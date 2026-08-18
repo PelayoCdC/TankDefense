@@ -1,0 +1,273 @@
+{
+"id": 30,
+"name": "Pantano V",
+"biome": "swamp",
+"gridWidth": 14,
+"gridHeight": 11,
+"blockedCells": [
+	[ 10, 2 ],
+	[ 3, 10 ],
+	[ 12, 7 ],
+	[ 4, 7 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 0, 1 ],
+			[ 4, 1 ],
+			[ 4, 5 ],
+			[ 14, 5 ]
+		]
+	},
+	{
+		"waypoints": [
+			[ 0, 9 ],
+			[ 8, 9 ],
+			[ 8, 5 ],
+			[ 14, 5 ]
+		]
+	}
+],
+"startGold": 600,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 3,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 7,
+				"interval": 0.8,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 7,
+				"interval": 0.5
+			},
+			{
+				"enemy": "bogmist",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 3
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			},
+			{
+				"enemy": "bogmist",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 4,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 9,
+		"event": "loot"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2
+			},
+			{
+				"enemy": "bogmist",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 6
+			}
+		],
+		"waveDelay": 9.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "fast",
+				"count": 5,
+				"interval": 0.5,
+				"delay": 4,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 9.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "sapper",
+				"count": 2,
+				"interval": 1.6,
+				"delay": 6
+			}
+		],
+		"waveDelay": 10.2,
+		"event": "enraged"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 11,
+				"interval": 0.5,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "flyer",
+				"count": 3,
+				"interval": 1.2,
+				"delay": 5
+			}
+		],
+		"waveDelay": 10.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 7,
+				"interval": 1.2,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 11
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 20,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 11.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 6,
+				"interval": 1.2,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "bogmist",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 3,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 11.8,
+		"event": "enraged"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 22,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 12,
+		"event": "loot"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 15,
+				"interval": 0.8,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "bogmist",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 4
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 4,
+				"interval": 2.2
+			},
+			{
+				"enemy": "healer",
+				"count": 2,
+				"interval": 2.5,
+				"delay": 4
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "boss",
+				"count": 1,
+				"interval": 4
+			},
+			{
+				"enemy": "normal",
+				"count": 12,
+				"interval": 0.8,
+				"delay": 3,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 14
+	}
+],
+"rewards": {
+	"metaCurrency": 265,
+	"firstClearBonus": 60
+}
+}

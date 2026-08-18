@@ -1,0 +1,47 @@
+{
+  "id": 2,
+  "name": "La serpiente",
+  "biome": "meadow",
+  "gridWidth": 12,
+  "gridHeight": 10,
+  "blockedCells": [[5, 0], [6, 9], [0, 0]],
+  "paths": [
+    { "waypoints": [[0, 1], [10, 1], [10, 4], [1, 4], [1, 7], [12, 7]] }
+  ],
+  "startGold": 280,
+  "lives": 20,
+  "allowedTowers": [],
+  "waves": [
+    { "waveDelay": 6, "groups": [
+      { "enemy": "normal", "count": 8, "interval": 0.9 }
+    ] },
+    { "waveDelay": 8, "groups": [
+      { "enemy": "normal", "count": 6, "interval": 0.9 },
+      { "enemy": "fast", "count": 5, "interval": 0.6, "delay": 4 }
+    ] },
+    { "waveDelay": 9, "groups": [
+      { "enemy": "tank", "count": 2, "interval": 3.0 },
+      { "enemy": "normal", "count": 6, "interval": 0.8, "delay": 2 }
+    ] },
+    { "waveDelay": 9, "groups": [
+      { "enemy": "fast", "count": 10, "interval": 0.45 }
+    ] },
+    { "waveDelay": 10, "groups": [
+      { "enemy": "tank", "count": 3, "interval": 2.5 },
+      { "enemy": "fast", "count": 6, "interval": 0.6, "delay": 4 }
+    ] },
+    { "waveDelay": 11, "groups": [
+      { "enemy": "tank", "count": 4, "interval": 2.0 },
+      { "enemy": "normal", "count": 10, "interval": 0.7, "delay": 3 }
+    ] }
+  ],
+  "rewards": { "metaCurrency": 30, "firstClearBonus": 25 },
+  "tutorial": [
+    { "message": "Gasta tus CRISTALES en el ÁRBOL DE MEJORAS: cada tanque tiene su propia rama. Desbloquea la METRALLETA (rápida y antiaérea), el RALENTIZADOR o el MORTERO, y mejora los que más uses. Toca para continuar.", "messageEn": "Spend your CRYSTALS in the UPGRADE TREE: every tank has its own branch. Unlock the MACHINE GUN (fast, hits flyers), the FROST tank or the MORTAR, and upgrade the ones you use most. Tap to continue.", "until": "tap" },
+    { "message": "Coloca un tanque donde cubra dos tramos del camino a la vez: las esquinas son los mejores puestos.", "messageEn": "Place a tank where it covers two stretches of the path at once: corners are the best spots.", "until": "build" },
+    { "message": "Si un tanque está mal colocado, tócalo y VÉNDELO para recuperar parte del oro. Prueba a vender uno.", "messageEn": "If a tank is badly placed, tap it and SELL it to recover part of the gold. Try selling one.", "until": "sell" },
+    { "message": "Los tanques también se pueden MEJORAR hasta el nivel 3: toca uno y pulsa Mejorar. Cada nivel suma daño, alcance y adornos dorados.", "messageEn": "Tanks can also be UPGRADED up to level 3: tap one and press Upgrade. Each level adds damage, range and golden trim.", "until": "upgrade" },
+    { "message": "¡Eso es! Cuando estés preparado, pulsa '¡Oleada ya!' para adelantar la siguiente oleada y ganar oro extra.", "messageEn": "That's it! When you are ready, press 'Wave now!' to call the next wave early and earn bonus gold.", "until": "callwave" },
+    { "message": "¡Genial! Los TANQUES aguantan mucho daño: el mortero y el veneno son ideales contra ellos.", "messageEn": "Great! TANKS soak up a lot of damage: the mortar and poison are ideal against them.", "until": "tap" }
+  ]
+}

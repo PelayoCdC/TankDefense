@@ -1,0 +1,25 @@
+{
+  "fusions": [
+    { "a": "slow", "b": "poison", "result": "plague" },
+    { "a": "cannon", "b": "flamethrower", "result": "incendiary_mortar" },
+    { "a": "machinegun", "b": "poison", "result": "stinger" },
+    { "a": "sniper", "b": "laser", "result": "railgun" },
+    { "a": "slow", "b": "flamethrower", "result": "frost_breath" },
+    { "a": "cannon", "b": "mortar", "result": "artillery" },
+    { "a": "machinegun", "b": "laser", "result": "gatling_laser" },
+    { "a": "sniper", "b": "poison", "result": "venom_sniper" },
+    { "a": "mortar", "b": "poison", "result": "toxic_mortar" },
+    { "a": "mortar", "b": "slow", "result": "ice_mortar" },
+    { "a": "tesla", "b": "laser", "result": "prism" },
+    { "a": "tesla", "b": "slow", "result": "frost_coil" },
+    { "a": "harpoon", "b": "slow", "result": "frost_hook" },
+    { "a": "flamethrower", "b": "poison", "result": "caustic_breath" },
+    { "a": "saw", "b": "harpoon", "result": "grinder_hook" },
+    { "a": "tesla", "b": "saw", "result": "arc_rotor" },
+    { "a": "flamethrower", "b": "tesla", "result": "plasma_arc" },
+    { "a": "sniper", "b": "harpoon", "result": "precision_hook" },
+    { "a": "machinegun", "b": "harpoon", "result": "net_harpoon" },
+    { "a": "cannon", "b": "saw", "result": "demolisher" },
+    { "a": "machinegun", "b": "saw", "result": "sawblade_launcher" }
+  ]
+}

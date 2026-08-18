@@ -1,0 +1,279 @@
+{
+"id": 41,
+"name": "Cielo tormentoso I",
+"biome": "storm",
+"gridWidth": 16,
+"gridHeight": 13,
+"blockedCells": [
+	[ 13, 12 ],
+	[ 4, 9 ],
+	[ 10, 2 ],
+	[ 10, 12 ],
+	[ 15, 3 ],
+	[ 4, 5 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 0, 11 ],
+			[ 14, 11 ],
+			[ 14, 7 ],
+			[ 2, 7 ],
+			[ 2, 1 ],
+			[ 16, 1 ]
+		]
+	}
+],
+"startGold": 732,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 6,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 3,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 8,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 3,
+				"interval": 1.2
+			},
+			{
+				"enemy": "stormcaller",
+				"count": 2,
+				"interval": 2.4,
+				"delay": 3
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 8,
+				"interval": 0.5
+			},
+			{
+				"enemy": "stormcaller",
+				"count": 2,
+				"interval": 2.4,
+				"delay": 3
+			}
+		],
+		"waveDelay": 9
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 12,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 9.4,
+		"event": "loot"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 6,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 9.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 6,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 10.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 10,
+				"interval": 0.8
+			},
+			{
+				"enemy": "fast",
+				"count": 6,
+				"interval": 0.5,
+				"delay": 5
+			}
+		],
+		"waveDelay": 10.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 7,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 11
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 5,
+				"interval": 1.2
+			},
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"delay": 5
+			}
+		],
+		"waveDelay": 11.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 5,
+				"interval": 1.2
+			},
+			{
+				"enemy": "stormcaller",
+				"count": 2,
+				"interval": 2.4,
+				"delay": 3
+			}
+		],
+		"waveDelay": 11.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 14,
+				"interval": 0.5
+			},
+			{
+				"enemy": "stormcaller",
+				"count": 2,
+				"interval": 2.4,
+				"delay": 5
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 23,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 22,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 10,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 7,
+				"interval": 1.2
+			},
+			{
+				"enemy": "normal",
+				"count": 8,
+				"interval": 0.8,
+				"delay": 4
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 7,
+				"interval": 1.2
+			},
+			{
+				"enemy": "healer",
+				"count": 2,
+				"interval": 2.5,
+				"delay": 3
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 8,
+				"interval": 1.2
+			},
+			{
+				"enemy": "stormcaller",
+				"count": 2,
+				"interval": 2.4,
+				"delay": 5
+			}
+		],
+		"waveDelay": 12
+	}
+],
+"rewards": {
+	"metaCurrency": 353,
+	"firstClearBonus": 71
+}
+}

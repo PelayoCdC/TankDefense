@@ -1,0 +1,211 @@
+{
+"id": 26,
+"name": "Pantano I",
+"biome": "swamp",
+"gridWidth": 14,
+"gridHeight": 11,
+"blockedCells": [
+	[ 13, 1 ],
+	[ 0, 10 ],
+	[ 7, 2 ],
+	[ 11, 7 ],
+	[ 1, 2 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 14, 9 ],
+			[ 2, 9 ],
+			[ 2, 6 ],
+			[ 12, 6 ],
+			[ 12, 1 ],
+			[ 0, 1 ]
+		]
+	}
+],
+"startGold": 552,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 6,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 5,
+				"interval": 0.5
+			},
+			{
+				"enemy": "bogmist",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 4
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 6,
+				"interval": 0.5
+			},
+			{
+				"enemy": "bogmist",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 4
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 8,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 9
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 11,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 9.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 12,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 9.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2
+			},
+			{
+				"enemy": "carrier",
+				"count": 2,
+				"interval": 3,
+				"delay": 3
+			}
+		],
+		"waveDelay": 10.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 16,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 10.6,
+		"event": "enraged"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2
+			},
+			{
+				"enemy": "healer",
+				"count": 2,
+				"interval": 2.5,
+				"delay": 6
+			}
+		],
+		"waveDelay": 11
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 5,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 11.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 13,
+				"interval": 0.5
+			},
+			{
+				"enemy": "sapper",
+				"count": 2,
+				"interval": 1.6,
+				"delay": 6
+			}
+		],
+		"waveDelay": 11.8,
+		"event": "loot"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 5,
+				"interval": 1.2
+			},
+			{
+				"enemy": "carrier",
+				"count": 2,
+				"interval": 3,
+				"delay": 5
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 22,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 12
+	}
+],
+"rewards": {
+	"metaCurrency": 233,
+	"firstClearBonus": 56
+}
+}

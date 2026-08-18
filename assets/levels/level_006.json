@@ -1,0 +1,122 @@
+{
+"id": 6,
+"name": "Desierto I",
+"biome": "desert",
+"gridWidth": 10,
+"gridHeight": 8,
+"blockedCells": [
+	[ 9, 0 ],
+	[ 6, 5 ],
+	[ 5, 3 ],
+	[ 5, 4 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 0, 7 ],
+			[ 8, 7 ],
+			[ 8, 2 ],
+			[ 0, 2 ]
+		]
+	}
+],
+"startGold": 312,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 3,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 4,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 4,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 5,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 9
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 5,
+				"interval": 0.8
+			},
+			{
+				"enemy": "mirage",
+				"count": 2,
+				"interval": 1.4,
+				"delay": 5
+			}
+		],
+		"waveDelay": 9.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 9.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 6,
+				"interval": 0.5
+			},
+			{
+				"enemy": "mirage",
+				"count": 2,
+				"interval": 1.4,
+				"delay": 5
+			}
+		],
+		"waveDelay": 10.2
+	}
+],
+"rewards": {
+	"metaCurrency": 73,
+	"firstClearBonus": 36
+}
+}

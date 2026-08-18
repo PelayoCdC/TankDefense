@@ -1,0 +1,273 @@
+{
+"id": 34,
+"name": "Cavernas de cristal IV",
+"biome": "crystal",
+"gridWidth": 15,
+"gridHeight": 12,
+"blockedCells": [
+	[ 0, 5 ],
+	[ 0, 8 ],
+	[ 14, 4 ],
+	[ 3, 10 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 0, 3 ],
+			[ 15, 3 ]
+		]
+	},
+	{
+		"waypoints": [
+			[ 9, 0 ],
+			[ 9, 3 ],
+			[ 15, 3 ]
+		]
+	}
+],
+"startGold": 648,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 5,
+				"interval": 0.5,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 6,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 5,
+				"interval": 0.5
+			},
+			{
+				"enemy": "resonator",
+				"count": 2,
+				"interval": 2.4,
+				"delay": 5,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 8,
+				"interval": 0.5,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 9
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			},
+			{
+				"enemy": "resonator",
+				"count": 2,
+				"interval": 2.4,
+				"delay": 5,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 9.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			},
+			{
+				"enemy": "resonator",
+				"count": 2,
+				"interval": 2.4,
+				"delay": 3
+			}
+		],
+		"waveDelay": 9.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 12,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 10.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 13,
+				"interval": 0.8,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 10.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			},
+			{
+				"enemy": "resonator",
+				"count": 2,
+				"interval": 2.4,
+				"delay": 6
+			}
+		],
+		"waveDelay": 11
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 10,
+				"interval": 0.5,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "normal",
+				"count": 5,
+				"interval": 0.8,
+				"delay": 3,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 11.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 17,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 11.8,
+		"event": "enraged"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 5,
+				"interval": 2.2,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 5,
+				"interval": 1.2,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "sapper",
+				"count": 2,
+				"interval": 1.6,
+				"delay": 5
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 6,
+				"interval": 1.2
+			},
+			{
+				"enemy": "resonator",
+				"count": 2,
+				"interval": 2.4,
+				"delay": 4,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 4,
+				"interval": 2.2
+			},
+			{
+				"enemy": "fast",
+				"count": 8,
+				"interval": 0.5,
+				"delay": 5,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 4,
+				"interval": 2.2
+			},
+			{
+				"enemy": "resonator",
+				"count": 2,
+				"interval": 2.4,
+				"delay": 6,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 12
+	}
+],
+"rewards": {
+	"metaCurrency": 297,
+	"firstClearBonus": 64
+}
+}

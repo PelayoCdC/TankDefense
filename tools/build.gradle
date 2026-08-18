@@ -1,0 +1,49 @@
+apply plugin: 'application'
+
+application {
+    mainClass = 'com.pcdc.td.tools.LevelGenerator'
+}
+
+dependencies {
+    implementation project(':core')
+}
+
+tasks.register('checkSave', JavaExec) {
+    group = 'towerdefense'
+    description = 'Verifica el ciclo de serialización del guardado'
+    mainClass = 'com.pcdc.td.tools.SaveRoundTripCheck'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+tasks.register('simulate', JavaExec) {
+    group = 'towerdefense'
+    description = 'Simula los 100 niveles con una IA sencilla para validar el balance'
+    mainClass = 'com.pcdc.td.tools.LevelSimulator'
+    classpath = sourceSets.main.runtimeClasspath
+    args = [rootProject.file('assets').absolutePath]
+    // gradlew :tools:simulate -Pmeta=full  → juega con el árbol completo
+    if (project.hasProperty('meta')) systemProperty 'td.sim.meta', project.property('meta')
+    // gradlew :tools:simulate -Pplus=1  → modo Nivel+ (vida x1.3)
+    if (project.hasProperty('plus')) systemProperty 'td.sim.plus', 'true'
+    // gradlew :tools:simulate -Pendless=1  → mide el modo Sin fin de cada bioma
+    if (project.hasProperty('endless')) systemProperty 'td.sim.endless', 'true'
+}
+
+tasks.register('audit', JavaExec) {
+    group = 'towerdefense'
+    description = 'Audita el daño de todos los tanques y fusiones (dps por oro)'
+    mainClass = 'com.pcdc.td.tools.TowerAudit'
+    classpath = sourceSets.main.runtimeClasspath
+    args = [rootProject.file('assets').absolutePath]
+}
+
+tasks.register('generateLevels', JavaExec) {
+    group = 'towerdefense'
+    description = 'Genera los JSON de niveles en assets/levels'
+    mainClass = 'com.pcdc.td.tools.LevelGenerator'
+    classpath = sourceSets.main.runtimeClasspath
+    // gradlew :tools:generateLevels -Pforce  → regenera también los existentes
+    args = project.hasProperty('force')
+        ? [rootProject.file('assets').absolutePath, '--force']
+        : [rootProject.file('assets').absolutePath]
+}

@@ -1,0 +1,243 @@
+{
+"id": 32,
+"name": "Cavernas de cristal II",
+"biome": "crystal",
+"gridWidth": 15,
+"gridHeight": 11,
+"blockedCells": [
+	[ 6, 8 ],
+	[ 14, 9 ],
+	[ 3, 8 ],
+	[ 1, 8 ],
+	[ 0, 5 ],
+	[ 6, 6 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 15, 1 ],
+			[ 2, 1 ],
+			[ 2, 5 ],
+			[ 13, 5 ],
+			[ 13, 10 ],
+			[ 0, 10 ]
+		]
+	}
+],
+"startGold": 624,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 4,
+				"interval": 0.5
+			},
+			{
+				"enemy": "resonator",
+				"count": 2,
+				"interval": 2.4,
+				"delay": 6
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 8,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 9,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 9
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 7,
+				"interval": 0.8
+			},
+			{
+				"enemy": "resonator",
+				"count": 2,
+				"interval": 2.4,
+				"delay": 4
+			}
+		],
+		"waveDelay": 9.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 5,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 9.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 12,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 10.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			},
+			{
+				"enemy": "normal",
+				"count": 4,
+				"interval": 0.8,
+				"delay": 6
+			}
+		],
+		"waveDelay": 10.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 8,
+				"interval": 0.8
+			},
+			{
+				"enemy": "flyer",
+				"count": 3,
+				"interval": 1.2,
+				"delay": 6
+			}
+		],
+		"waveDelay": 11
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 10,
+				"interval": 0.5
+			},
+			{
+				"enemy": "carrier",
+				"count": 2,
+				"interval": 3,
+				"delay": 4
+			}
+		],
+		"waveDelay": 11.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2
+			},
+			{
+				"enemy": "resonator",
+				"count": 2,
+				"interval": 2.4,
+				"delay": 6
+			}
+		],
+		"waveDelay": 11.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 13,
+				"interval": 0.5
+			},
+			{
+				"enemy": "resonator",
+				"count": 2,
+				"interval": 2.4,
+				"delay": 5
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 12,
+				"interval": 0.5
+			},
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"delay": 5
+			}
+		],
+		"waveDelay": 12,
+		"event": "loot"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 5,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 9,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 12
+	}
+],
+"rewards": {
+	"metaCurrency": 281,
+	"firstClearBonus": 62
+}
+}

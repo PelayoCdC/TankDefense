@@ -1,0 +1,358 @@
+{
+"id": 47,
+"name": "Tierras corruptas II",
+"biome": "corrupt",
+"gridWidth": 17,
+"gridHeight": 13,
+"blockedCells": [
+	[ 7, 2 ],
+	[ 12, 4 ],
+	[ 11, 3 ],
+	[ 7, 3 ],
+	[ 1, 12 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 0, 11 ],
+			[ 15, 11 ],
+			[ 15, 7 ],
+			[ 2, 7 ],
+			[ 2, 1 ],
+			[ 17, 1 ]
+		]
+	}
+],
+"startGold": 804,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 6,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 8,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 9,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 10,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 11,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 9
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 8,
+				"interval": 0.8
+			},
+			{
+				"enemy": "normal",
+				"count": 4,
+				"interval": 0.8,
+				"delay": 3
+			}
+		],
+		"waveDelay": 9.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 5,
+				"interval": 1.2
+			},
+			{
+				"enemy": "abomination",
+				"count": 2,
+				"interval": 3,
+				"delay": 4
+			}
+		],
+		"waveDelay": 9.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 11,
+				"interval": 0.5
+			},
+			{
+				"enemy": "fast",
+				"count": 6,
+				"interval": 0.5,
+				"delay": 3
+			}
+		],
+		"waveDelay": 10.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 12,
+				"interval": 0.5
+			},
+			{
+				"enemy": "normal",
+				"count": 6,
+				"interval": 0.8,
+				"delay": 4
+			}
+		],
+		"waveDelay": 10.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			},
+			{
+				"enemy": "fast",
+				"count": 7,
+				"interval": 0.5,
+				"delay": 4
+			}
+		],
+		"waveDelay": 11
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 19,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 11.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 15,
+				"interval": 0.8
+			},
+			{
+				"enemy": "warden",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 5
+			}
+		],
+		"waveDelay": 11.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 6,
+				"interval": 1.2
+			},
+			{
+				"enemy": "carrier",
+				"count": 2,
+				"interval": 3,
+				"delay": 3
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 4,
+				"interval": 2.2
+			},
+			{
+				"enemy": "warden",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 4
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 7,
+				"interval": 1.2
+			},
+			{
+				"enemy": "abomination",
+				"count": 2,
+				"interval": 3,
+				"delay": 4
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 12,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 15,
+				"interval": 0.5
+			},
+			{
+				"enemy": "fast",
+				"count": 9,
+				"interval": 0.5,
+				"delay": 4
+			},
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"delay": 5
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 16,
+				"interval": 0.5
+			},
+			{
+				"enemy": "normal",
+				"count": 9,
+				"interval": 0.8,
+				"delay": 4
+			},
+			{
+				"enemy": "carrier",
+				"count": 2,
+				"interval": 3,
+				"delay": 6
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 15,
+				"interval": 0.8
+			},
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2,
+				"delay": 5
+			},
+			{
+				"enemy": "healer",
+				"count": 2,
+				"interval": 2.5,
+				"delay": 6
+			}
+		],
+		"waveDelay": 12,
+		"event": "enraged"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 16,
+				"interval": 0.8
+			},
+			{
+				"enemy": "chiller",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 6
+			},
+			{
+				"enemy": "healer",
+				"count": 2,
+				"interval": 2.5,
+				"delay": 3
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 7,
+				"interval": 1.2
+			},
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2,
+				"delay": 6
+			},
+			{
+				"enemy": "flyer",
+				"count": 3,
+				"interval": 1.2,
+				"delay": 3
+			}
+		],
+		"waveDelay": 12
+	}
+],
+"rewards": {
+	"metaCurrency": 401,
+	"firstClearBonus": 77
+}
+}

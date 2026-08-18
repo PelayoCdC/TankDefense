@@ -1,0 +1,369 @@
+{
+"id": 50,
+"name": "Tierras corruptas V",
+"biome": "corrupt",
+"gridWidth": 18,
+"gridHeight": 14,
+"blockedCells": [
+	[ 1, 1 ],
+	[ 7, 3 ],
+	[ 12, 5 ],
+	[ 15, 10 ],
+	[ 3, 3 ],
+	[ 8, 7 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 0, 13 ],
+			[ 5, 13 ],
+			[ 5, 2 ],
+			[ 10, 2 ],
+			[ 10, 13 ],
+			[ 18, 13 ]
+		]
+	}
+],
+"startGold": 840,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 7,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 3,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 10,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 10,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			},
+			{
+				"enemy": "charger",
+				"count": 2,
+				"interval": 1.4,
+				"delay": 6
+			}
+		],
+		"waveDelay": 9
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 13,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 9.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			},
+			{
+				"enemy": "healer",
+				"count": 2,
+				"interval": 2.5,
+				"delay": 4
+			}
+		],
+		"waveDelay": 9.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			},
+			{
+				"enemy": "normal",
+				"count": 6,
+				"interval": 0.8,
+				"delay": 6
+			}
+		],
+		"waveDelay": 10.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 5,
+				"interval": 1.2
+			},
+			{
+				"enemy": "fast",
+				"count": 7,
+				"interval": 0.5,
+				"delay": 6
+			}
+		],
+		"waveDelay": 10.6,
+		"event": "loot"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			},
+			{
+				"enemy": "healer",
+				"count": 2,
+				"interval": 2.5,
+				"delay": 5
+			}
+		],
+		"waveDelay": 11
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 15,
+				"interval": 0.5
+			},
+			{
+				"enemy": "sapper",
+				"count": 2,
+				"interval": 1.6,
+				"delay": 6
+			}
+		],
+		"waveDelay": 11.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 14,
+				"interval": 0.8
+			},
+			{
+				"enemy": "carrier",
+				"count": 2,
+				"interval": 3,
+				"delay": 4
+			}
+		],
+		"waveDelay": 11.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 15,
+				"interval": 0.8
+			},
+			{
+				"enemy": "chiller",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 5
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 7,
+				"interval": 1.2
+			},
+			{
+				"enemy": "normal",
+				"count": 9,
+				"interval": 0.8,
+				"delay": 6
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 26,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 6,
+				"interval": 2.2
+			},
+			{
+				"enemy": "acolyte",
+				"count": 2,
+				"interval": 2,
+				"delay": 4
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 6,
+				"interval": 1.2
+			},
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"delay": 5
+			},
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"delay": 3
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 33,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 17,
+				"interval": 0.5
+			},
+			{
+				"enemy": "fast",
+				"count": 10,
+				"interval": 0.5,
+				"delay": 3
+			},
+			{
+				"enemy": "fast",
+				"count": 7,
+				"interval": 0.5,
+				"delay": 5
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 7,
+				"interval": 1.2
+			},
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"delay": 6
+			},
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"delay": 3
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 19,
+				"interval": 0.5
+			},
+			{
+				"enemy": "normal",
+				"count": 10,
+				"interval": 0.8,
+				"delay": 3
+			},
+			{
+				"enemy": "normal",
+				"count": 7,
+				"interval": 0.8,
+				"delay": 4
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "overlord",
+				"count": 1,
+				"interval": 4
+			},
+			{
+				"enemy": "flyer",
+				"count": 16,
+				"interval": 0.8,
+				"delay": 3
+			}
+		],
+		"waveDelay": 14
+	}
+],
+"rewards": {
+	"metaCurrency": 425,
+	"firstClearBonus": 80
+}
+}

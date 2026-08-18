@@ -1,0 +1,255 @@
+{
+"id": 37,
+"name": "Ruinas arcanas II",
+"biome": "ruins",
+"gridWidth": 16,
+"gridHeight": 12,
+"blockedCells": [
+	[ 9, 7 ],
+	[ 10, 2 ],
+	[ 3, 4 ],
+	[ 8, 2 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 0, 1 ],
+			[ 14, 1 ],
+			[ 14, 6 ],
+			[ 2, 6 ],
+			[ 2, 11 ],
+			[ 16, 11 ]
+		]
+	}
+],
+"startGold": 684,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 5,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 6,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 7,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 9,
+		"event": "loot"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 10,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 9.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 11,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 9.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 10.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 14,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 10.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2
+			},
+			{
+				"enemy": "sapper",
+				"count": 2,
+				"interval": 1.6,
+				"delay": 4
+			}
+		],
+		"waveDelay": 11
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 11,
+				"interval": 0.5
+			},
+			{
+				"enemy": "normal",
+				"count": 5,
+				"interval": 0.8,
+				"delay": 5
+			}
+		],
+		"waveDelay": 11.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 5,
+				"interval": 1.2
+			},
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"delay": 6
+			}
+		],
+		"waveDelay": 11.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 17,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 5,
+				"interval": 1.2
+			},
+			{
+				"enemy": "flyer",
+				"count": 3,
+				"interval": 1.2,
+				"delay": 5
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 4,
+				"interval": 2.2
+			},
+			{
+				"enemy": "acolyte",
+				"count": 2,
+				"interval": 2,
+				"delay": 5
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 13,
+				"interval": 0.8
+			},
+			{
+				"enemy": "acolyte",
+				"count": 2,
+				"interval": 2,
+				"delay": 4
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 15,
+				"interval": 0.5
+			},
+			{
+				"enemy": "flyer",
+				"count": 3,
+				"interval": 1.2,
+				"delay": 6
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 22,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 12
+	}
+],
+"rewards": {
+	"metaCurrency": 321,
+	"firstClearBonus": 67
+}
+}

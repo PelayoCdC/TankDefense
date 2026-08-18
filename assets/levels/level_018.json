@@ -1,0 +1,177 @@
+{
+"id": 18,
+"name": "Nieve III",
+"biome": "snow",
+"gridWidth": 12,
+"gridHeight": 10,
+"blockedCells": [
+	[ 10, 7 ],
+	[ 0, 2 ],
+	[ 11, 1 ],
+	[ 9, 7 ],
+	[ 4, 2 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 0, 1 ],
+			[ 10, 1 ],
+			[ 10, 5 ],
+			[ 2, 5 ],
+			[ 2, 9 ],
+			[ 12, 9 ]
+		]
+	}
+],
+"startGold": 456,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 5,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 4,
+				"interval": 0.5
+			},
+			{
+				"enemy": "chiller",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 4
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 6,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 8,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 9
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 9,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 9.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 11,
+				"interval": 0.5
+			},
+			{
+				"enemy": "champion",
+				"count": 1,
+				"interval": 3,
+				"delay": 2
+			}
+		],
+		"waveDelay": 9.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 10,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 10.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2
+			},
+			{
+				"enemy": "chiller",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 6
+			}
+		],
+		"waveDelay": 10.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 6,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 11
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2
+			},
+			{
+				"enemy": "normal",
+				"count": 5,
+				"interval": 0.8,
+				"delay": 6
+			}
+		],
+		"waveDelay": 11.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 16,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 11.8
+	}
+],
+"rewards": {
+	"metaCurrency": 169,
+	"firstClearBonus": 48
+}
+}

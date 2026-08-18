@@ -1,0 +1,45 @@
+{
+  "id": 4,
+  "name": "El cruce",
+  "biome": "meadow",
+  "gridWidth": 12,
+  "gridHeight": 10,
+  "blockedCells": [[6, 6], [2, 8]],
+  "paths": [
+    { "waypoints": [[0, 2], [5, 2], [5, 7], [12, 7]] }
+  ],
+  "startGold": 300,
+  "lives": 20,
+  "allowedTowers": ["cannon", "machinegun", "slow", "poison"],
+  "waves": [
+    { "waveDelay": 6, "groups": [
+      { "enemy": "normal", "count": 8, "interval": 0.9 }
+    ] },
+    { "waveDelay": 8, "groups": [
+      { "enemy": "fast", "count": 7, "interval": 0.5 }
+    ] },
+    { "waveDelay": 9, "groups": [
+      { "enemy": "tank", "count": 3, "interval": 2.5 },
+      { "enemy": "normal", "count": 8, "interval": 0.8, "delay": 3 }
+    ] },
+    { "waveDelay": 9, "groups": [
+      { "enemy": "normal", "count": 10, "interval": 0.7 },
+      { "enemy": "fast", "count": 6, "interval": 0.5, "delay": 4 }
+    ] },
+    { "waveDelay": 10, "groups": [
+      { "enemy": "tank", "count": 3, "interval": 2.2 },
+      { "enemy": "fast", "count": 7, "interval": 0.5, "delay": 5 }
+    ] },
+    { "waveDelay": 11, "groups": [
+      { "enemy": "tank", "count": 4, "interval": 2.0 },
+      { "enemy": "normal", "count": 10, "interval": 0.6, "delay": 3 }
+    ] }
+  ],
+  "rewards": { "metaCurrency": 34, "firstClearBonus": 25 },
+  "tutorial": [
+    { "message": "¡Hora de FUSIONAR! Algunas parejas de tanques se combinan en un modelo superior. Toca para continuar.", "messageEn": "Time to FUSE! Some pairs of tanks combine into a superior model. Tap to continue.", "until": "tap" },
+    { "message": "Coloca un RALENTIZADOR junto al camino.", "messageEn": "Place a FROST tank next to the path.", "until": "build" },
+    { "message": "Ahora selecciona el VENENO y colócalo ENCIMA del ralentizador. La celda se iluminará en amarillo: es una fusión válida.", "messageEn": "Now select POISON and place it ON TOP of the frost tank. The cell will glow yellow: that is a valid fusion.", "until": "fusion" },
+    { "message": "¡Has creado el tanque PLAGA, que frena y envenena a la vez! Desbloquea el RALENTIZADOR y el VENENO en el Árbol para fusionarlos cuando quieras.", "messageEn": "You have created the PLAGUE tank, which slows and poisons at once! Unlock the FROST tank and POISON in the Tree to fuse them whenever you want.", "until": "tap" }
+  ]
+}

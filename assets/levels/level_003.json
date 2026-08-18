@@ -1,0 +1,49 @@
+{
+  "id": 3,
+  "name": "Cielos hostiles",
+  "biome": "meadow",
+  "gridWidth": 13,
+  "gridHeight": 10,
+  "blockedCells": [[3, 7], [9, 2], [6, 4]],
+  "paths": [
+    { "waypoints": [[0, 8], [4, 8], [4, 5], [8, 5], [8, 8], [13, 8]] },
+    { "waypoints": [[0, 1], [7, 1], [7, 3], [13, 3]] }
+  ],
+  "startGold": 320,
+  "lives": 20,
+  "allowedTowers": ["cannon", "machinegun"],
+  "waves": [
+    { "waveDelay": 7, "groups": [
+      { "enemy": "normal", "count": 8, "interval": 0.9 }
+    ] },
+    { "waveDelay": 8, "groups": [
+      { "enemy": "normal", "count": 6, "interval": 0.8 },
+      { "enemy": "fast", "count": 5, "interval": 0.6, "delay": 3, "pathIndex": 1 }
+    ] },
+    { "waveDelay": 9, "groups": [
+      { "enemy": "flyer", "count": 4, "interval": 1.2 }
+    ] },
+    { "waveDelay": 9, "groups": [
+      { "enemy": "tank", "count": 3, "interval": 2.5 },
+      { "enemy": "flyer", "count": 4, "interval": 1.0, "delay": 4, "pathIndex": 1 }
+    ] },
+    { "waveDelay": 10, "groups": [
+      { "enemy": "fast", "count": 8, "interval": 0.5 },
+      { "enemy": "flyer", "count": 5, "interval": 0.9, "delay": 3 }
+    ] },
+    { "waveDelay": 11, "groups": [
+      { "enemy": "tank", "count": 4, "interval": 2.0, "pathIndex": 1 },
+      { "enemy": "flyer", "count": 6, "interval": 0.8, "delay": 5 }
+    ] },
+    { "waveDelay": 12, "groups": [
+      { "enemy": "boss", "count": 1, "interval": 1 },
+      { "enemy": "normal", "count": 10, "interval": 0.7, "delay": 3, "pathIndex": 1 }
+    ] }
+  ],
+  "rewards": { "metaCurrency": 35, "firstClearBonus": 30 },
+  "tutorial": [
+    { "message": "¡Cuidado! Este nivel tiene DOS caminos y enemigos VOLADORES (esferas azules). Toca para continuar.", "messageEn": "Careful! This level has TWO paths and FLYING enemies (blue orbs). Tap to continue.", "until": "tap" },
+    { "message": "El cañón no puede apuntar al cielo: solo los tanques ANTIAÉREOS derriban voladores. Para esta misión tienes la METRALLETA de préstamo. Construye defensa antiaérea.", "messageEn": "The cannon cannot aim at the sky: only ANTI-AIR tanks shoot down flyers. For this mission you get the MACHINE GUN on loan. Build anti-air defenses.", "until": "build" },
+    { "message": "Desbloquea la METRALLETA en el ÁRBOL DE MEJORAS para quedártela. Más adelante llegarán otros antiaéreos: el FRANCOTIRADOR nunca falla y el LÁSER quema más cuanto más apunta. ¡Defiende ambos caminos!", "messageEn": "Unlock the MACHINE GUN in the UPGRADE TREE to keep it. More anti-air tanks come later: the SNIPER never misses and the LASER burns harder the longer it aims. Defend both paths!", "until": "tap" }
+  ]
+}

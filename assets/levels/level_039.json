@@ -1,0 +1,307 @@
+{
+"id": 39,
+"name": "Ruinas arcanas IV",
+"biome": "ruins",
+"gridWidth": 16,
+"gridHeight": 12,
+"blockedCells": [
+	[ 8, 1 ],
+	[ 8, 7 ],
+	[ 5, 0 ],
+	[ 14, 7 ],
+	[ 6, 1 ],
+	[ 5, 7 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 16, 9 ],
+			[ 0, 9 ]
+		]
+	},
+	{
+		"waypoints": [
+			[ 11, 0 ],
+			[ 11, 9 ],
+			[ 0, 9 ]
+		]
+	}
+],
+"startGold": 708,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 5,
+				"interval": 0.8,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 5,
+				"interval": 0.5
+			},
+			{
+				"enemy": "acolyte",
+				"count": 2,
+				"interval": 2,
+				"delay": 6
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 3,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 9,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 7,
+				"interval": 0.8
+			},
+			{
+				"enemy": "acolyte",
+				"count": 2,
+				"interval": 2,
+				"delay": 3,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 9
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 10,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 9.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 12,
+				"interval": 0.5,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 9.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"delay": 4,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 10.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 13,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 10.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 14,
+				"interval": 0.8,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 11
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 10,
+				"interval": 0.8
+			},
+			{
+				"enemy": "sapper",
+				"count": 2,
+				"interval": 1.6,
+				"delay": 4,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 11.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 5,
+				"interval": 1.2,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "acolyte",
+				"count": 2,
+				"interval": 2,
+				"delay": 5
+			}
+		],
+		"waveDelay": 11.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 11,
+				"interval": 0.8
+			},
+			{
+				"enemy": "sapper",
+				"count": 2,
+				"interval": 1.6,
+				"delay": 5,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 12,
+				"interval": 0.8
+			},
+			{
+				"enemy": "acolyte",
+				"count": 2,
+				"interval": 2,
+				"delay": 6
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 20,
+				"interval": 0.8,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 4,
+				"interval": 2.2
+			},
+			{
+				"enemy": "acolyte",
+				"count": 2,
+				"interval": 2,
+				"delay": 6,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 12,
+		"event": "enraged"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 4,
+				"interval": 2.2
+			},
+			{
+				"enemy": "flyer",
+				"count": 3,
+				"interval": 1.2,
+				"delay": 6,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 4,
+				"interval": 2.2,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "acolyte",
+				"count": 2,
+				"interval": 2,
+				"delay": 4
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 7,
+				"interval": 1.2
+			},
+			{
+				"enemy": "acolyte",
+				"count": 2,
+				"interval": 2,
+				"delay": 4
+			}
+		],
+		"waveDelay": 12
+	}
+],
+"rewards": {
+	"metaCurrency": 337,
+	"firstClearBonus": 69
+}
+}

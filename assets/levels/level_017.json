@@ -1,0 +1,160 @@
+{
+"id": 17,
+"name": "Nieve II",
+"biome": "snow",
+"gridWidth": 12,
+"gridHeight": 10,
+"blockedCells": [
+	[ 4, 2 ],
+	[ 5, 0 ],
+	[ 9, 9 ],
+	[ 6, 9 ],
+	[ 0, 7 ],
+	[ 9, 6 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 0, 9 ],
+			[ 4, 9 ],
+			[ 4, 6 ],
+			[ 8, 6 ],
+			[ 8, 3 ],
+			[ 11, 3 ],
+			[ 11, 6 ],
+			[ 12, 6 ]
+		]
+	}
+],
+"startGold": 444,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 4,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 4,
+				"interval": 0.5
+			},
+			{
+				"enemy": "chiller",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 5
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 6,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 3,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 8,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 9
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 9.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 9.8,
+		"event": "enraged"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 10,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 10.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 8,
+				"interval": 0.8
+			},
+			{
+				"enemy": "chiller",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 3
+			}
+		],
+		"waveDelay": 10.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 11,
+		"event": "enraged"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 14,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 11.4
+	}
+],
+"rewards": {
+	"metaCurrency": 161,
+	"firstClearBonus": 47
+}
+}

@@ -1,0 +1,14 @@
+.gradle/
+build/
+out/
+local.properties
+.idea/
+*.iml
+android/libs/
+android/.cxx/
+captures/
+save/
+
+# sesiones de Claude Code y artefactos locales
+.claude/
+*.apk

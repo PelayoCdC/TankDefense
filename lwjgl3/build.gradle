@@ -1,0 +1,74 @@
+apply plugin: 'application'
+
+application {
+    mainClass = 'com.pcdc.td.lwjgl3.Lwjgl3Launcher'
+}
+
+dependencies {
+    implementation project(':core')
+    implementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
+    implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+    implementation "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
+}
+
+tasks.named('run') {
+    workingDir = rootProject.file('assets')
+    setIgnoreExitValue(true)
+    // reenvía los -Dtd.* de la línea de comandos al juego (p.ej. -Dtd.autotowers=true)
+    System.properties.each { k, v ->
+        if (k.toString().startsWith('td.')) systemProperty k.toString(), v
+    }
+}
+
+// Regenera los iconos de la app (Android + desktop) renderizando la torre 3D
+tasks.register('generateIcons', JavaExec) {
+    group = 'towerdefense'
+    description = 'Regenera ic_launcher/adaptive, assets/icons y lwjgl3/icon.ico'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.pcdc.td.lwjgl3.IconTool'
+    workingDir = rootProject.file('assets')
+}
+
+// Galería de verificación: todos los enemigos × biomas en un PNG
+tasks.register('enemyGallery', JavaExec) {
+    group = 'towerdefense'
+    description = 'Renderiza el catálogo de enemigos por bioma a un PNG'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.pcdc.td.lwjgl3.EnemyGalleryTool'
+    workingDir = rootProject.file('assets')
+    if (project.hasProperty('out')) systemProperty 'td.galleryOut', project.property('out')
+}
+
+// Empaqueta un TowerDefense.exe autocontenido (con JRE) en build/package
+tasks.register('packageWin', Exec) {
+    dependsOn 'jar'
+    group = 'towerdefense'
+    description = 'Genera una app de Windows autocontenida con jpackage'
+    doFirst {
+        project.delete("${buildDir}/package")
+    }
+    def jpackageArgs = ["${System.getProperty('java.home')}${File.separator}bin${File.separator}jpackage",
+        '--type', 'app-image',
+        '--name', 'TankDefense',
+        '--input', "${buildDir}/libs",
+        '--main-jar', "${appName}-${project.version}.jar",
+        '--dest', "${buildDir}/package",
+        '--java-options', '-Xmx1G']
+    if (file('icon.ico').exists()) {
+        jpackageArgs += ['--icon', file('icon.ico').absolutePath]
+    }
+    commandLine jpackageArgs
+}
+
+jar {
+    dependsOn configurations.runtimeClasspath
+    archiveBaseName = appName
+    from files(sourceSets.main.output.classesDirs)
+    from files(sourceSets.main.output.resourcesDir)
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    from files(rootProject.file('assets'))
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes 'Main-Class': application.mainClass
+    }
+}

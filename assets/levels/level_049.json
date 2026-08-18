@@ -1,0 +1,353 @@
+{
+"id": 49,
+"name": "Tierras corruptas IV",
+"biome": "corrupt",
+"gridWidth": 18,
+"gridHeight": 14,
+"blockedCells": [
+	[ 5, 12 ],
+	[ 10, 13 ],
+	[ 9, 6 ],
+	[ 13, 8 ],
+	[ 7, 13 ],
+	[ 5, 13 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 18, 2 ],
+			[ 14, 2 ],
+			[ 14, 5 ],
+			[ 11, 5 ],
+			[ 11, 8 ],
+			[ 8, 8 ],
+			[ 8, 11 ],
+			[ 4, 11 ],
+			[ 4, 8 ],
+			[ 1, 8 ],
+			[ 1, 5 ],
+			[ 0, 5 ]
+		]
+	}
+],
+"startGold": 828,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 8,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 11,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 12,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 9
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2
+			},
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"delay": 4
+			}
+		],
+		"waveDelay": 9.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 9,
+				"interval": 0.8
+			},
+			{
+				"enemy": "charger",
+				"count": 2,
+				"interval": 1.4,
+				"delay": 4
+			}
+		],
+		"waveDelay": 9.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 5,
+				"interval": 1.2
+			},
+			{
+				"enemy": "abomination",
+				"count": 2,
+				"interval": 3,
+				"delay": 3
+			}
+		],
+		"waveDelay": 10.2,
+		"event": "loot"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 11,
+				"interval": 0.8
+			},
+			{
+				"enemy": "sapper",
+				"count": 2,
+				"interval": 1.6,
+				"delay": 6
+			}
+		],
+		"waveDelay": 10.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 5,
+				"interval": 1.2
+			},
+			{
+				"enemy": "abomination",
+				"count": 2,
+				"interval": 3,
+				"delay": 4
+			}
+		],
+		"waveDelay": 11
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 13,
+				"interval": 0.8
+			},
+			{
+				"enemy": "bogmist",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 6
+			}
+		],
+		"waveDelay": 11.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 4,
+				"interval": 2.2
+			},
+			{
+				"enemy": "fast",
+				"count": 8,
+				"interval": 0.5,
+				"delay": 5
+			}
+		],
+		"waveDelay": 11.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 7,
+				"interval": 1.2
+			},
+			{
+				"enemy": "healer",
+				"count": 2,
+				"interval": 2.5,
+				"delay": 4
+			}
+		],
+		"waveDelay": 12,
+		"event": "enraged"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 16,
+				"interval": 0.8
+			},
+			{
+				"enemy": "sapper",
+				"count": 3,
+				"interval": 1.6,
+				"delay": 4
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 5,
+				"interval": 2.2
+			},
+			{
+				"enemy": "warden",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 5
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 30,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 12,
+		"event": "loot"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 16,
+				"interval": 0.5
+			},
+			{
+				"enemy": "carrier",
+				"count": 2,
+				"interval": 3,
+				"delay": 6
+			},
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"delay": 3
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 13,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 34,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 18,
+				"interval": 0.5
+			},
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"delay": 5
+			},
+			{
+				"enemy": "healer",
+				"count": 2,
+				"interval": 2.5,
+				"delay": 5
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 34,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 23,
+				"interval": 0.8
+			},
+			{
+				"enemy": "warden",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 4
+			}
+		],
+		"waveDelay": 12
+	}
+],
+"rewards": {
+	"metaCurrency": 417,
+	"firstClearBonus": 79
+}
+}

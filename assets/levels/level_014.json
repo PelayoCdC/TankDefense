@@ -1,0 +1,148 @@
+{
+"id": 14,
+"name": "Bosque IV",
+"biome": "forest",
+"gridWidth": 12,
+"gridHeight": 9,
+"blockedCells": [
+	[ 2, 4 ],
+	[ 0, 6 ],
+	[ 11, 4 ],
+	[ 9, 0 ],
+	[ 10, 0 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 12, 8 ],
+			[ 8, 8 ],
+			[ 8, 5 ],
+			[ 5, 5 ],
+			[ 5, 2 ],
+			[ 1, 2 ],
+			[ 1, 5 ],
+			[ 0, 5 ]
+		]
+	}
+],
+"startGold": 408,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 4,
+				"interval": 0.5
+			},
+			{
+				"enemy": "warden",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 6
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 5,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 6,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 7,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 9,
+		"event": "enraged"
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 8,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 9.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 6,
+				"interval": 0.8
+			},
+			{
+				"enemy": "warden",
+				"count": 2,
+				"interval": 2.2,
+				"delay": 5
+			}
+		],
+		"waveDelay": 9.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 9,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 10.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 5,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 10.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 11
+	}
+],
+"rewards": {
+	"metaCurrency": 137,
+	"firstClearBonus": 44
+}
+}

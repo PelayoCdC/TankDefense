@@ -1,0 +1,131 @@
+{
+"id": 8,
+"name": "Desierto III",
+"biome": "desert",
+"gridWidth": 11,
+"gridHeight": 8,
+"blockedCells": [
+	[ 4, 6 ],
+	[ 6, 2 ],
+	[ 8, 1 ],
+	[ 6, 7 ],
+	[ 4, 7 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 0, 1 ],
+			[ 4, 1 ],
+			[ 4, 4 ],
+			[ 8, 4 ],
+			[ 8, 7 ],
+			[ 11, 7 ]
+		]
+	}
+],
+"startGold": 336,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 3,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 5,
+				"interval": 0.5
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 4,
+				"interval": 0.5
+			},
+			{
+				"enemy": "mirage",
+				"count": 2,
+				"interval": 1.4,
+				"delay": 6
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 6,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			},
+			{
+				"enemy": "mirage",
+				"count": 2,
+				"interval": 1.4,
+				"delay": 6
+			},
+			{
+				"enemy": "champion",
+				"count": 1,
+				"interval": 3,
+				"delay": 2
+			}
+		],
+		"waveDelay": 9
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 9.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 9.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 9,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 10.2
+	}
+],
+"rewards": {
+	"metaCurrency": 89,
+	"firstClearBonus": 38
+}
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- En móviles con notch/esquinas redondeadas: dibujar a pantalla completa;
+         la UI del juego ya respeta los safe insets. -->
+    <style name="GdxTheme" parent="android:Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+</resources>

@@ -1,0 +1,231 @@
+{
+"id": 25,
+"name": "Volcán V",
+"biome": "volcano",
+"gridWidth": 14,
+"gridHeight": 11,
+"blockedCells": [
+	[ 3, 3 ],
+	[ 10, 6 ],
+	[ 2, 1 ],
+	[ 13, 1 ],
+	[ 4, 1 ]
+],
+"paths": [
+	{
+		"waypoints": [
+			[ 14, 9 ],
+			[ 9, 9 ],
+			[ 9, 6 ],
+			[ 0, 6 ]
+		]
+	},
+	{
+		"waypoints": [
+			[ 14, 3 ],
+			[ 5, 3 ],
+			[ 5, 6 ],
+			[ 0, 6 ]
+		]
+	}
+],
+"startGold": 540,
+"waves": [
+	{
+		"groups": [
+			{
+				"enemy": "fast",
+				"count": 6,
+				"interval": 0.5,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 7.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 8.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2
+			}
+		],
+		"waveDelay": 8.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 7,
+				"interval": 0.8,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "magma",
+				"count": 2,
+				"interval": 1.8,
+				"delay": 5,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 9
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 10,
+				"interval": 0.8
+			}
+		],
+		"waveDelay": 9.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 4,
+				"interval": 1.2,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "magma",
+				"count": 2,
+				"interval": 1.8,
+				"delay": 6
+			}
+		],
+		"waveDelay": 9.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "normal",
+				"count": 4,
+				"interval": 0.8,
+				"delay": 3
+			}
+		],
+		"waveDelay": 10.2
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 6,
+				"interval": 1.2,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 10.6
+	},
+	{
+		"groups": [
+			{
+				"enemy": "normal",
+				"count": 11,
+				"interval": 0.8
+			},
+			{
+				"enemy": "magma",
+				"count": 2,
+				"interval": 1.8,
+				"delay": 4
+			}
+		],
+		"waveDelay": 11
+	},
+	{
+		"groups": [
+			{
+				"enemy": "flyer",
+				"count": 7,
+				"interval": 1.2
+			}
+		],
+		"waveDelay": 11.4
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 3,
+				"interval": 2.2,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "healer",
+				"count": 2,
+				"interval": 2.5,
+				"delay": 3
+			}
+		],
+		"waveDelay": 11.8
+	},
+	{
+		"groups": [
+			{
+				"enemy": "tank",
+				"count": 4,
+				"interval": 2.2,
+				"pathIndex": 1
+			},
+			{
+				"enemy": "magma",
+				"count": 2,
+				"interval": 1.8,
+				"delay": 5
+			}
+		],
+		"waveDelay": 12
+	},
+	{
+		"groups": [
+			{
+				"enemy": "boss",
+				"count": 1,
+				"interval": 4
+			},
+			{
+				"enemy": "normal",
+				"count": 11,
+				"interval": 0.8,
+				"delay": 3,
+				"pathIndex": 1
+			}
+		],
+		"waveDelay": 14
+	}
+],
+"rewards": {
+	"metaCurrency": 225,
+	"firstClearBonus": 55
+}
+}
