@@ -1,23 +1,34 @@
-# Tower Defense 3D
+# Tank Defense
 
-Tower defense 3D hecho con libGDX (Java) para **Windows** y **Android**. Todo el
-arte se genera por código con primitivas (`ModelBuilder`): no hay assets
-externos salvo los JSON de datos.
+Defensa de torres en 3D hecha con libGDX (Java) para **Windows** y **Android**.
+Las torres son tanques que se despliegan desde un helicóptero en paracaídas, se
+reubican conduciendo por el tablero y se fusionan entre sí.
+
+Todo se genera por código: no hay un solo archivo de imagen, modelo ni sonido en
+el repositorio. El arte 3D se construye con primitivas (`ModelBuilder`), la
+música y los efectos se sintetizan en tiempo de ejecución, y los únicos datos
+externos son JSON. La tipografía Roboto es la excepción.
 
 ## Características
 
-- **100 niveles** agrupados en **10 biomas** (uno por decena). Cada bioma tiene
-  paleta propia, skin de enemigos, una **mecánica de mapa** (tormentas de arena,
-  arbustos, hielo, lava, niebla, cristales, portales, viento, combos) y un
-  **rasgo especial de enemigos** (sprint, regeneración, armadura, escudos,
-  división, evasión, élites con aura...).
-- **8 torres base** con 4 tipos de ataque: proyectil, hitscan (francotirador),
-  área continua (lanzallamas) y rayo con daño creciente (láser).
-- **Fusión de torres**: construye una torre encima de otra con receta
-  desbloqueada y se combinan (8 recetas, p.ej. veneno + ralentizador = Plaga).
-- **Progresión meta**: árbol de mejoras permanente comprado con cristales y
-  base con edificios (mina, laboratorio, taller) comprados con **medallas**
-  (1 por cada estrella nueva conseguida).
+- **50 niveles** en **10 biomas** (5 niveles cada uno). Cada bioma tiene paleta
+  propia, skin de enemigos, una **mecánica de mapa** (tormentas de arena,
+  arbustos, hielo, lava, niebla, cristales, portales, viento, combos) y una
+  **unidad insignia** que solo aparece en él y en el bioma final.
+- **13 tanques base** con cinco formas de disparar: proyectil, hitscan
+  (francotirador), área continua (lanzallamas), rayo con daño creciente (láser)
+  y soporte sin ataque (radar, mando).
+- **21 recetas de fusión**: construye un tanque sobre otro con la receta
+  desbloqueada y se combinan (p. ej. veneno + ralentizador = Plaga,
+  trituradora + cañón = Demoledor). 34 tanques distintos en total.
+- **20 enemigos**: tropa con oficio (sanador, zapador, portador que suelta
+  carga), voladores, divisores, campeones con aura y un jefe final con guion
+  propio.
+- **Progresión meta**: árbol de mejoras permanente de **101 nodos** comprado con
+  cristales, y edificios de base con doctrinas excluyentes comprados con
+  medallas (1 por cada estrella nueva).
+- **Modo sin fin** con cartas de refuerzo cada 10 oleadas, hitos de pago y
+  récords propios.
 - **Tutorial** guiado en los niveles 1-5. Guardado local con escritura atómica.
 
 ## Compilar y ejecutar
@@ -34,31 +45,41 @@ gradlew :android:assembleRelease
 ```
 
 Flags de desarrollo (solo desktop): `-Dtd.level=42` arranca directo en un
-nivel; `-Dtd.autotowers=true` coloca torres automáticamente (pruebas).
+nivel; `-Dtd.autotowers=true` coloca tanques automáticamente. Cualquier flag
+`-Dtd.*` cambia el guardado a un perfil de depuración aparte, así que las
+pruebas nunca tocan la partida real.
 
 ## Herramientas (módulo `tools`)
 
 ```bash
-# Regenera los niveles 6-100 (los 1-5, tutoriales, son a mano y no se tocan)
+# Regenera los niveles 6-50 (los 1-5, tutoriales, son a mano y no se tocan)
 gradlew :tools:generateLevels           # no sobrescribe existentes
 gradlew :tools:generateLevels -Pforce   # regenera todo
 
-# Simula los 100 niveles sin gráficos con una IA sencilla (validación de balance)
-gradlew :tools:simulate
+# Simula la campaña sin gráficos con una IA sencilla (validación de balance)
+gradlew :tools:simulate                 # campaña base
+gradlew :tools:simulate -Pmeta=full     # con el árbol de mejoras completo
+gradlew :tools:simulate -Pendless=1     # modo sin fin
+
+# Auditoría de daño: dps por armadura, dps por celda y daño por pasada
+gradlew :tools:audit
 
 # Test del ciclo de serialización del guardado
 gradlew :tools:checkSave
+
+# Paridad de claves entre idiomas
+node tools/i18n-check.js
 ```
 
 ## Estructura
 
 ```
 assets/            datos JSON (towers, enemies, fusions, biomes, upgrades,
-                   buildings) y niveles (levels/level_XXX.json + índice)
+                   buildings), textos (i18n/) y niveles (levels/level_XXX.json)
 core/              todo el juego (mundo, render, UI, meta), sin código de plataforma
 lwjgl3/            launcher de Windows
 android/           launcher de Android (minSdk 21, target 35)
-tools/             generador de niveles, simulador de balance
+tools/             generador de niveles, simulador, auditoría de balance
 ```
 
 Puntos clave del código:
@@ -72,8 +93,8 @@ Puntos clave del código:
 
 ## Audio
 
-Todo el audio se **sintetiza por código** (`core/src/.../audio/`): 13 efectos y
-11 temas musicales generativos (uno por bioma + menú), cada uno con su escala,
+Todo el audio se **sintetiza por código** (`core/src/.../audio/`): efectos y
+temas musicales generativos (uno por bioma + menú), cada uno con su escala,
 tempo e instrumentación. Los WAV se generan la primera vez que suenan y se
 cachean en el almacenamiento local (`audio_v1/`); el APK no lleva ni un byte de
 audio. Para regenerarlos tras cambiar el sinte, sube `CACHE_VERSION` en
@@ -81,5 +102,5 @@ audio. Para regenerarlos tras cambiar el sinte, sube `CACHE_VERSION` en
 
 ## Pendiente / ideas
 
-- Fuente TTF empaquetada (ahora usa la BitmapFont por defecto de libGDX).
+- Traducciones más allá de español e inglés (la infraestructura ya está lista).
 - Perfilado en dispositivo Android real (GLProfiler) y firma del APK release.
