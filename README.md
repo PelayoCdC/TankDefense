@@ -4,10 +4,16 @@ Defensa de torres en 3D hecha con libGDX (Java) para **Windows** y **Android**.
 Las torres son tanques que se despliegan desde un helicóptero en paracaídas, se
 reubican conduciendo por el tablero y se fusionan entre sí.
 
-Todo se genera por código: no hay un solo archivo de imagen, modelo ni sonido en
-el repositorio. El arte 3D se construye con primitivas (`ModelBuilder`), la
-música y los efectos se sintetizan en tiempo de ejecución, y los únicos datos
-externos son JSON. La tipografía Roboto es la excepción.
+Todo se genera por código: no hay un solo archivo de imagen, modelo ni sonido
+entre los assets del juego. El arte 3D se construye con primitivas
+(`ModelBuilder`), la música y los efectos se sintetizan en tiempo de ejecución,
+y los únicos datos externos son JSON. La tipografía Roboto es la excepción.
+
+## Capturas
+
+| Bosque | Desierto, con el jefe | Cristal, con portales |
+|---|---|---|
+| ![Nivel del bioma de bosque](docs/capturas/bosque.jpg) | ![Nivel del bioma de desierto con el jefe en pantalla](docs/capturas/desierto-jefe.jpg) | ![Nivel del bioma de cristal con portales](docs/capturas/cristal-portales.jpg) |
 
 ## Características
 
