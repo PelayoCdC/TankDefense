@@ -1238,8 +1238,9 @@ public class GameplayScreen extends ScreenAdapter
             }
             Node head = t.renderInstance.getNode("head");
             // la trituradora no apunta: sus sierras giran como un torbellino
+            // (el Demoledor tampoco apunta, pero MARTILLEA en vez de girar)
             boolean spinner = t.def.type() == TowerDef.AttackType.AREA
-                && t.def.coneAngleDeg >= 180f;
+                && t.def.coneAngleDeg >= 180f && t.def.pulseInterval <= 0f;
             boolean radar = "radar".equals(t.def.id);
             float headYaw = spinner && t.attacking ? stateTime * 540f
                 : radar ? stateTime * 70f : t.headYawDeg; // la antena barre sin parar
@@ -1253,9 +1254,14 @@ public class GameplayScreen extends ScreenAdapter
             head.rotation.setFromAxis(0f, 1f, 0f, headYaw);
             // retroceso: el cabezal recula al disparar
             float yawRad = t.headYawDeg * MathUtils.degreesToRadians;
+            // martillo neumático: el cabezal entero vibra machacando el suelo
+            float headY = 0.32f;
+            if (t.def.pulseInterval > 0f && t.attacking) {
+                headY -= 0.07f * Math.abs(MathUtils.sin(stateTime * 26f));
+            }
             head.translation.set(
                 -MathUtils.sin(yawRad) * 0.14f * t.recoil,
-                0.32f,
+                headY,
                 -MathUtils.cos(yawRad) * 0.14f * t.recoil);
             t.renderInstance.calculateTransforms();
             renderList.add(t.renderInstance);

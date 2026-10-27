@@ -20,6 +20,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.ObjectMap;
 import com.pcdc.td.data.BiomeDef;
+import com.pcdc.td.data.EffectDef;
 import com.pcdc.td.data.EnemyDef;
 import com.pcdc.td.data.TowerDef;
 import com.pcdc.td.world.CellType;
@@ -179,6 +180,16 @@ public class ModelFactory implements Disposable {
 
     // ---- entidades ----
 
+    /** ¿La torre aplica este estado? Se consulta para decidir los rasgos de
+     *  casco de las fusiones, que traducen el efecto a silueta. */
+    private static boolean hasEffect(TowerDef def, String type) {
+        if (def.effects == null) return false;
+        for (EffectDef e : def.effects) {
+            if (e != null && type.equals(e.type)) return true;
+        }
+        return false;
+    }
+
     public Model tower(TowerDef def) {
         return tower(def, 1);
     }
@@ -268,6 +279,87 @@ public class ModelFactory implements Disposable {
             BoxShapeBuilder.build(studs, -0.2f, -0.13f, 0.44f, 0.1f, 0.1f, 0.1f);
             BoxShapeBuilder.build(studs, 0.2f, -0.13f, -0.44f, 0.1f, 0.1f, 0.1f);
             BoxShapeBuilder.build(studs, -0.2f, -0.13f, -0.44f, 0.1f, 0.1f, 0.1f);
+            // linaje TESLA: las fusiones que encadenan rayos (o pintan plasma)
+            // llevan una antena de bobina en la popa del casco — mástil, dos
+            // anillos y orbe, versión mini del cabezal del Tesla. Va en el
+            // casco, no en la torreta, para que no gire con el disco de sierra.
+            if (def.chainCount > 0 || "plasma_arc".equals(def.id)) {
+                BoxShapeBuilder.build(studs, 0.27f, 0.4f, -0.3f, 0.04f, 0.45f, 0.04f);
+                tmpTransform.setToTranslation(0.27f, 0.5f, -0.3f);
+                studs.setVertexTransform(tmpTransform);
+                CylinderShapeBuilder.build(studs, 0.2f, 0.035f, 0.2f, 8);
+                tmpTransform.setToTranslation(0.27f, 0.58f, -0.3f);
+                studs.setVertexTransform(tmpTransform);
+                CylinderShapeBuilder.build(studs, 0.14f, 0.035f, 0.14f, 8);
+                tmpTransform.setToTranslation(0.27f, 0.66f, -0.3f);
+                studs.setVertexTransform(tmpTransform);
+                SphereShapeBuilder.build(studs, 0.11f, 0.11f, 0.11f, 8, 6);
+                studs.setVertexTransform(null);
+            }
+
+            // RASGOS DE FAMILIA: la fusión se reconoce por lo que hace, no por
+            // el color, que la pintura del jugador puede cambiar. Cada rasgo
+            // ocupa una esquina distinta del casco para que un tanque con dos
+            // efectos (la Plaga es slow+poison) los luzca ambos sin solaparse.
+            boolean poison = hasEffect(def, "poison");
+            boolean slow = hasEffect(def, "slow");
+            boolean burn = hasEffect(def, "burn");
+            // lo oscuro de cuba y chimenea comparte una sola part: menos
+            // materiales y una part se rellena entera antes de abrir la siguiente
+            if (poison || burn) {
+                MeshPartBuilder metal = builder.part("trait-metal", GL20.GL_TRIANGLES, ATTRS,
+                    new Material(ColorAttribute.createDiffuse(Color.valueOf("2b3138"))));
+                if (poison) {
+                    // cuba centrada y estrecha: cabe entre los dos depósitos de
+                    // combustible que el Aliento cáustico ya lleva en x=±0.24
+                    metal.setVertexTransform(tmpTransform.setToTranslation(0f, 0.24f, -0.3f));
+                    CylinderShapeBuilder.build(metal, 0.26f, 0.2f, 0.26f, 12);
+                }
+                if (burn) {
+                    // chimenea pegada al eje: más a la izquierda chocaría con el
+                    // mástil del adorno de nivel 3, que va en x=-0.26
+                    metal.setVertexTransform(tmpTransform.setToTranslation(-0.17f, 0.3f, -0.3f));
+                    CylinderShapeBuilder.build(metal, 0.12f, 0.28f, 0.12f, 10);
+                }
+                metal.setVertexTransform(null);
+            }
+            if (poison) {
+                // tapa de líquido: el verde asomando por la boca de la cuba es lo
+                // que se ve desde la cámara cenital, no el bidón
+                MeshPartBuilder ooze = builder.part("trait-ooze", GL20.GL_TRIANGLES, ATTRS,
+                    new Material(ColorAttribute.createDiffuse(Color.valueOf("7ddc4a"))));
+                ooze.setVertexTransform(tmpTransform.setToTranslation(0f, 0.355f, -0.3f));
+                CylinderShapeBuilder.build(ooze, 0.2f, 0.03f, 0.2f, 12);
+                ooze.setVertexTransform(null);
+            }
+            if (slow) {
+                // carámbanos colgando de AMBOS flancos, no del morro: la cámara
+                // gira de 90 en 90 y en cualquiera de las cuatro vistas se ve al
+                // menos un lateral, mientras que frente y popa se turnan para
+                // esconderse (y el morro encima lo tapa la torreta).
+                // x=±0.40 los saca de las planchas de blindaje de nv2 (que llegan
+                // a 0.375) y la altura los deja sobre el guardabarros de la oruga,
+                // que sube hasta y=0.065: por debajo de ahí no se vería la punta.
+                MeshPartBuilder frost = builder.part("trait-frost", GL20.GL_TRIANGLES, ATTRS,
+                    new Material(ColorAttribute.createDiffuse(Color.valueOf("dff2ff"))));
+                float[] zs = {-0.2f, 0.05f, 0.3f};
+                for (int side = -1; side <= 1; side += 2) {
+                    for (float z : zs) {
+                        tmpTransform.setToTranslation(side * 0.4f, 0.115f, z).rotate(Vector3.X, 180f);
+                        frost.setVertexTransform(tmpTransform);
+                        ConeShapeBuilder.build(frost, 0.07f, 0.14f, 0.07f, 8);
+                    }
+                }
+                frost.setVertexTransform(null);
+            }
+            if (burn) {
+                // brasa asomando por la boca de la chimenea
+                MeshPartBuilder ember = builder.part("trait-ember", GL20.GL_TRIANGLES, ATTRS,
+                    new Material(ColorAttribute.createDiffuse(Color.valueOf("ff8a3c"))));
+                ember.setVertexTransform(tmpTransform.setToTranslation(-0.17f, 0.44f, -0.3f));
+                SphereShapeBuilder.build(ember, 0.11f, 0.11f, 0.11f, 8, 6);
+                ember.setVertexTransform(null);
+            }
         }
 
         // adornos de mejora: piezas acoplables que se leen de lejos, no bandas.
@@ -302,6 +394,28 @@ public class ModelFactory implements Disposable {
             }
         }
 
+        // GARFIO TRITURADOR: el único tanque de corte a 360º que además TIRA del
+        // enemigo. El carrete de cable va en el CASCO y asomando por la popa
+        // (z hasta -0.58): dentro del cabezal el disco de sierra, que es plano y
+        // de radio 0.44, lo tapaba entero desde la cámara cenital.
+        if (def.pullDistance > 0f && def.type() == TowerDef.AttackType.AREA
+            && def.coneAngleDeg >= 180f) {
+            MeshPartBuilder reel = builder.part("hook-reel", GL20.GL_TRIANGLES, ATTRS,
+                new Material(ColorAttribute.createDiffuse(Color.valueOf("3a4148"))));
+            // los cilindros nacen sobre Y: tumbarlos sobre X para que el cable
+            // se enrolle de lado a lado, como un torno
+            reel.setVertexTransform(tmpTransform.setToTranslation(0f, 0.26f, -0.46f)
+                .rotate(Vector3.Z, 90f));
+            CylinderShapeBuilder.build(reel, 0.24f, 0.3f, 0.24f, 10); // tambor
+            reel.setVertexTransform(tmpTransform.setToTranslation(-0.16f, 0.26f, -0.46f)
+                .rotate(Vector3.Z, 90f));
+            CylinderShapeBuilder.build(reel, 0.3f, 0.03f, 0.3f, 10); // bridas
+            reel.setVertexTransform(tmpTransform.setToTranslation(0.16f, 0.26f, -0.46f)
+                .rotate(Vector3.Z, 90f));
+            CylinderShapeBuilder.build(reel, 0.3f, 0.03f, 0.3f, 10);
+            reel.setVertexTransform(null);
+        }
+
         Node head = builder.node();
         head.id = "head";
         head.translation.set(0f, 0.32f, 0f);
@@ -320,6 +434,24 @@ public class ModelFactory implements Disposable {
             default:
                 CylinderShapeBuilder.build(pb, 0.42f, 0.28f, 0.42f, 14);
                 break;
+        }
+        // GATLING LÁSER: comparte esfera con el láser normal, así que se le
+        // añade el tambor de tres lentes que le da nombre — placa frontal que
+        // las agrupa y las lentes en triángulo alrededor del eje de disparo
+        if ("gatling_laser".equals(def.id)) {
+            pb.setVertexTransform(tmpTransform.setToTranslation(0f, 0.04f, 0.24f)
+                .rotate(Vector3.X, 90f));
+            CylinderShapeBuilder.build(pb, 0.32f, 0.05f, 0.32f, 14); // placa/aro
+            for (int l = 0; l < 3; l++) {
+                float ang = (90f + l * 120f) * com.badlogic.gdx.math.MathUtils.degreesToRadians;
+                float lx = com.badlogic.gdx.math.MathUtils.cos(ang) * 0.1f;
+                float ly = com.badlogic.gdx.math.MathUtils.sin(ang) * 0.1f;
+                // los cilindros nacen sobre Y: tumbarlos sobre Z para que miren al frente
+                pb.setVertexTransform(tmpTransform.setToTranslation(lx, 0.04f + ly, 0.32f)
+                    .rotate(Vector3.X, 90f));
+                CylinderShapeBuilder.build(pb, 0.11f, 0.3f, 0.11f, 8);
+            }
+            pb.setVertexTransform(null);
         }
         // cañón hacia +Z; las de área llevan boquilla ancha y corta en vez de tubo
         if ("tesla".equals(def.id)) {
@@ -343,6 +475,24 @@ public class ModelFactory implements Disposable {
                 .rotate(Vector3.X, -18f));
             BoxShapeBuilder.build(pb, 0f, 0f, 0f, 0.08f, 0.08f, 0.1f); // emisor
             pb.setVertexTransform(null);
+        } else if (def.type() == TowerDef.AttackType.AREA && def.coneAngleDeg >= 180f
+            && def.pulseInterval > 0f) {
+            // DEMOLEDOR: martillo neumático — cuerpo compresor con asas y un
+            // brazo que ADELANTA el pistón hasta asomar por el frontal del
+            // casco: así el puntero se ve machacar el suelo (el render hace
+            // vibrar el cabezal en vertical al atacar, no girar; el cabezal
+            // apunta al enemigo más cercano, o sea el martillo "le busca")
+            BoxShapeBuilder.build(pb, 0f, 0.14f, -0.04f, 0.3f, 0.22f, 0.34f); // compresor
+            BoxShapeBuilder.build(pb, -0.23f, 0.18f, -0.04f, 0.16f, 0.06f, 0.1f); // asas
+            BoxShapeBuilder.build(pb, 0.23f, 0.18f, -0.04f, 0.16f, 0.06f, 0.1f);
+            BoxShapeBuilder.build(pb, 0f, 0.1f, 0.22f, 0.12f, 0.1f, 0.3f); // brazo
+            pb.setVertexTransform(tmpTransform.setToTranslation(0f, -0.12f, 0.38f));
+            CylinderShapeBuilder.build(pb, 0.15f, 0.34f, 0.15f, 10); // pistón
+            // puntero: cono invertido que apunta al suelo
+            pb.setVertexTransform(tmpTransform.setToTranslation(0f, -0.36f, 0.38f)
+                .rotate(Vector3.X, 180f));
+            ConeShapeBuilder.build(pb, 0.14f, 0.2f, 0.14f, 8);
+            pb.setVertexTransform(null);
         } else if (def.type() == TowerDef.AttackType.AREA && def.coneAngleDeg >= 180f) {
             // cualquier tanque de corte a 360º (trituradora y sus fusiones)
             // disco de sierra PLANO en horizontal, como una mesa de corte:
@@ -351,12 +501,14 @@ public class ModelFactory implements Disposable {
             pb.setVertexTransform(tmpTransform.setToTranslation(0f, 0.09f, 0f));
             CylinderShapeBuilder.build(pb, 0.88f, 0.045f, 0.88f, 18); // disco
             pb.setVertexTransform(null);
-            for (int t = 0; t < 8; t++) { // dientes del borde
-                pb.setVertexTransform(tmpTransform.setToRotation(Vector3.Y, t * 45f)
-                    .translate(0.46f, 0.09f, 0f));
-                BoxShapeBuilder.build(pb, 0f, 0f, 0f, 0.11f, 0.055f, 0.08f);
+            for (int t = 0; t < 10; t++) { // dientes: conos apuntando hacia fuera
+                pb.setVertexTransform(tmpTransform.setToRotation(Vector3.Y, t * 36f)
+                    .translate(0.49f, 0.09f, 0f).rotate(Vector3.Z, -90f));
+                ConeShapeBuilder.build(pb, 0.1f, 0.17f, 0.07f, 4);
             }
             pb.setVertexTransform(null);
+            // (el carrete del Garfio triturador va en el CASCO, no aquí: bajo el
+            // disco quedaba tapado por completo desde la cámara del juego)
         } else if (def.pullDistance > 0f) {
             // ARPÓN: carrete de cable a los lados y un dardo de dos púas
             pb.setVertexTransform(tmpTransform.setToTranslation(-0.2f, 0.06f, -0.05f)
@@ -373,6 +525,28 @@ public class ModelFactory implements Disposable {
         } else if (def.type() == TowerDef.AttackType.AREA) {
             BoxShapeBuilder.build(pb, 0f, 0.02f, 0.26f, 0.26f, 0.16f, 0.3f);
             BoxShapeBuilder.build(pb, 0f, 0.02f, 0.42f, 0.34f, 0.22f, 0.08f); // difusor
+        } else if ("railgun".equals(def.id)) {
+            // CAÑÓN DE RIEL: no dispara por un tubo, sino entre dos raíles. El
+            // HUECO central es su seña — va antes que la regla de francotirador
+            // porque también es hitscan de largo alcance.
+            BoxShapeBuilder.build(pb, 0f, 0.04f, 0f, 0.3f, 0.22f, 0.22f); // acelerador de culata
+            BoxShapeBuilder.build(pb, -0.09f, 0.04f, 0.42f, 0.07f, 0.1f, 0.8f);
+            BoxShapeBuilder.build(pb, 0.09f, 0.04f, 0.42f, 0.07f, 0.1f, 0.8f);
+            // travesaños: sujetan los raíles sin tapar el hueco
+            BoxShapeBuilder.build(pb, 0f, 0.04f, 0.2f, 0.25f, 0.05f, 0.07f);
+            BoxShapeBuilder.build(pb, 0f, 0.04f, 0.62f, 0.25f, 0.05f, 0.07f);
+        } else if (def.type() == TowerDef.AttackType.HITSCAN && def.range >= 5f
+            && def.pullDistance <= 0f) {
+            // FAMILIA FRANCOTIRADOR: alcance de rifle y disparo instantáneo, sin
+            // cable de arpón. Cañón largo y fino más mira telescópica: se
+            // distingue del cañón genérico incluso desde la cámara cenital.
+            BoxShapeBuilder.build(pb, 0f, 0.04f, 0.42f, 0.11f, 0.11f, 0.78f);
+            // los cilindros nacen sobre Y: tumbar la mira sobre el eje Z
+            pb.setVertexTransform(tmpTransform.setToTranslation(0.09f, 0.16f, 0.18f)
+                .rotate(Vector3.X, 90f));
+            CylinderShapeBuilder.build(pb, 0.11f, 0.22f, 0.11f, 8);
+            pb.setVertexTransform(null);
+            BoxShapeBuilder.build(pb, 0.09f, 0.1f, 0.18f, 0.04f, 0.09f, 0.05f); // soporte de la mira
         } else if (def.twinBarrel) {
             float len = level >= 2 ? 0.68f : 0.58f;
             BoxShapeBuilder.build(pb, -0.12f, 0.04f, 0.36f, 0.11f, 0.11f, len);
@@ -959,10 +1133,10 @@ public class ModelFactory implements Disposable {
         pb.setColor(Color.valueOf("cfd8de"));
         CylinderShapeBuilder.build(pb, 0.42f, 0.07f, 0.42f, 12);
         pb.setColor(Color.valueOf("8a949c"));
-        for (int t = 0; t < 6; t++) { // dientes
-            pb.setVertexTransform(tmpTransform.setToRotation(Vector3.Y, t * 60f)
-                .translate(0.24f, 0f, 0f));
-            BoxShapeBuilder.build(pb, 0f, 0f, 0f, 0.1f, 0.08f, 0.07f);
+        for (int t = 0; t < 8; t++) { // dientes: puntas cónicas hacia fuera
+            pb.setVertexTransform(tmpTransform.setToRotation(Vector3.Y, t * 45f)
+                .translate(0.26f, 0f, 0f).rotate(Vector3.Z, -90f));
+            ConeShapeBuilder.build(pb, 0.09f, 0.13f, 0.07f, 4);
         }
         pb.setVertexTransform(null);
         sawDiscModel = manage(builder.end());

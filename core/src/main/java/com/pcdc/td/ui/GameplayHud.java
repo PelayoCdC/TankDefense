@@ -832,11 +832,18 @@ public class GameplayHud {
         b.getLabel().setFontScale(com.pcdc.td.ui.Fonts.rel(0.8f));
         b.clearChildren();
         if (icon != null) {
-            // icono 3D pre-renderizado + coste debajo (el nombre, en la ficha)
+            // icono 3D + NOMBRE + coste: con 21 fusiones el color y la silueta
+            // no bastan para reconocerlas en la barra (el nombre va con puntos
+            // suspensivos si no cabe; la ficha sigue mostrándolo entero)
             Table content = new Table();
             Image img = new Image(icon);
             img.setScaling(Scaling.fit);
-            content.add(img).size(32).row();
+            content.add(img).size(26).row();
+            Label name = new Label(Lang.name("tower", def.id, def.name), skin);
+            name.setFontScale(com.pcdc.td.ui.Fonts.rel(0.52f));
+            name.setEllipsis(true);
+            name.setAlignment(com.badlogic.gdx.utils.Align.center);
+            content.add(name).width(56).row();
             content.add(b.getLabel());
             b.add(content).grow();
             addTowerButtonListener(b, def);
@@ -1088,7 +1095,8 @@ public class GameplayHud {
             TextButton b = buildTowerButton(def);
             towerButtons.put(def.id, b);
             boolean compactBtn = towerIcons.get(def.id) != null;
-            bar.add(b).width(compactBtn ? 56 : 86).height(48);
+            // algo más altos desde que llevan el nombre bajo el icono
+            bar.add(b).width(compactBtn ? 62 : 86).height(compactBtn ? 58 : 48);
             if (++added % perRow == 0) bar.row();
         }
         return bar;
@@ -1100,7 +1108,8 @@ public class GameplayHud {
      */
     private float barHeight() {
         int rows = fusionTabVisible ? barRowsFusion : barRowsBase;
-        return (rows > 1 ? 152 : 90) + (barTabbed ? 28 : 0);
+        // botones de 58 de alto desde que muestran el nombre
+        return (rows > 1 ? 172 : 100) + (barTabbed ? 28 : 0);
     }
 
     /** Reposiciona los paneles inferiores tras cambiar de pestaña. */
